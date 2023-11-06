@@ -1,3 +1,21 @@
+@mixin mobile {
+    @media screen and  (max-width: 480px) {
+        @content;
+        
+    }
+}
+    @mixin tablet{
+        @media screen and  (max-width: 768px) {
+            @content;
+            
+        }
+}
+@mixin laptop{
+    @media screen and  (max-width: 1200px) {
+        @content;
+        
+    }
+}
 .formContainer{
     background-color: #a7bcff;
     
@@ -19,6 +37,7 @@
         .Logo{
             color: #5d5b8d;
             font-weight: bold;font-size: 48px;
+
 
         }
         .title{
@@ -101,6 +120,7 @@
 
                 .logo{
                     font-weight: bold;
+                    @include tablet {display:none}
 
                 }
                 .user{
@@ -233,6 +253,16 @@
                     img{
                         width: 50%;
                     }
+                }
+            &.owner {
+                flex-direction: row-reverse;
+                .messageContent{
+                    align-items: flex-end;
+                    p{background-color: #8da4f1;}
+                    color: white;
+                    border-radius: 10px 0px, 10px,10px;
+                    max-width: max-content;
+                }
                 }
             }
         }
